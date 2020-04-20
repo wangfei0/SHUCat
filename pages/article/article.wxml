@@ -1,0 +1,28 @@
+<!--pages/article/article.wxml-->
+<view class="container">
+  <label class="title">{{title}}</label>
+  <view class="info">
+    <label class="author">飞 {{time}}</label>
+    <label class="time">2017-05-24</label>
+  </view>
+  <!-- <view class="imgwrap">
+    <image src="{{cover}}"></image>
+  </view> -->
+  <swiper indicator-dots="true"
+    autoplay="true" interval="4000" duration="1000">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <!-- <navigator url="/pages/article/article?cover={{item}}&id={{index+3}}"> -->
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="scaleToFill"/>
+      </swiper-item>
+      <!-- </navigator> -->
+    </block>
+  </swiper>
+
+  <text class="content">{{content}}</text>
+  <!-- <view class="ctrlbar">
+    <view>Views {{view}}  Like {{like}}</view>
+    <view>Report</view>
+  </view> -->
+</view>
+
